@@ -1,6 +1,7 @@
 #include "monty.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 /**
  * push - data saving
@@ -13,13 +14,13 @@ void push(stack_t **stack, unsigned int line_number)
     stack_t *new = malloc(sizeof(stack_t)), *current;
     if (new == NULL)
     {
-        fprintf(stderr, "Error: malloc failed\n");
+        dprintf(STDERR_FILENO, "Error: malloc failed\n");
         exit(EXIT_FAILURE);
     }
     run.arg = strtok(NULL, " ");
     if (run.arg == NULL || _isdigit(run.arg) == -1)
     {
-        fprintf(stderr, "L%u: usage: push integer", line_number);
+        dprintf(STDERR_FILENO, "L%u: usage: push integer", line_number);
         exit(EXIT_FAILURE);
     }
     new->n = atoi(run.arg);

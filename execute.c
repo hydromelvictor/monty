@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <unistd.h>
 
 void execute(stack_t **stack, unsigned int line_number)
 {
@@ -19,6 +20,6 @@ void execute(stack_t **stack, unsigned int line_number)
             return;
         }
     }
-    fprintf(stderr, "L%u: unknown instruction %s", line_number, run.func);
+    dprintf(STDERR_FILENO, "L%u: unknown instruction %s", line_number, run.func);
     exit(EXIT_FAILURE);
 }
