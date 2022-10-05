@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 
     while (getline(&str, &n, fd) != -1)
     {
-        arg = strtok(str, "\n\t\r");
+        arg = strtok(str, " \n\t\r$");
         execute(arg, &stack, i);
         i++;
     }
