@@ -56,6 +56,7 @@ void pall(stack_t **stack , unsigned int line_number __attribute__((unused)));
 void execute(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number __attribute__((unused)));
 void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
 
 
 int _isdigit(char *str);
