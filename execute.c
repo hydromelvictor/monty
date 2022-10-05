@@ -13,6 +13,13 @@ void execute(stack_t **stack __attribute__((unused)), unsigned int line_number)
         {"swap", swap},
         {"add", add},
         {"nop", nop},
+        {"sub", _sub},
+        {"div", _div},
+        {"mod", mod},
+        {"pchar", pchar},
+        {"pstr", pstr},
+        {"rotl", rotl},
+        {"rotr", rotr},
         {NULL, NULL}
     };
     int i;
@@ -30,6 +37,6 @@ void execute(stack_t **stack __attribute__((unused)), unsigned int line_number)
             return;
         }
     }
-    dprintf(STDERR_FILENO, "L%u: unknown instruction %s", line_number, run.func);
+    dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", line_number, run.func);
     exit(EXIT_FAILURE);
 }

@@ -52,13 +52,20 @@ typedef struct parm
 extern param_t run; 
 
 void push(stack_t **stack, unsigned int line_number);
-void pall(stack_t **stack , unsigned int line_number __attribute__((unused)));
+void pall(stack_t **stack , unsigned int line_number);
 void execute(stack_t **stack, unsigned int line_number);
-void pint(stack_t **stack, unsigned int line_number __attribute__((unused)));
+void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
-void nop(stack_t **stack __attribute__((unused)), unsigned int line_number __attribute__((unused)));
+void nop(stack_t **stack, unsigned int line_number);
+void _sub(stack_t **stack, unsigned int line_number);
+void _div(stack_t **stack, unsigned int line_number);
+void mod(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number);
+void rotl(stack_t **stack, unsigned int line_number);
+void rotr(stack_t **stack, unsigned int line_number);
 
 int _isdigit(char *str);
 #endif

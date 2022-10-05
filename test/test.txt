@@ -291,6 +291,23 @@ GitHub repository: monty
   ///////////////////////////////////////////////////////////////////////////////////////////////
 6. sub
 #advanced
+Implémentez le sous-opcode.
+
+Le sous-opcode
+
+L'opcode sub soustrait l'élément supérieur de la pile du deuxième élément supérieur de la pile.
+
+Utilisation : sous
+Si la pile contient moins de deux éléments,
+affiche le message d'erreur L<line_number> : can't sub, stack too short, suivi d'une nouvelle ligne,
+et sortir avec le statut EXIT_FAILURE
+Le résultat est stocké dans le deuxième élément supérieur de la pile, et l'élément supérieur est supprimé,
+pour qu'à la fin :
+L'élément supérieur de la pile contient le résultat
+La pile est un élément plus court
+
+
+
 Implement the sub opcode.
 
 The sub opcode
@@ -298,8 +315,11 @@ The sub opcode
 The opcode sub subtracts the top element of the stack from the second top element of the stack.
 
 Usage: sub
-If the stack contains less than two elements, print the error message L<line_number>: can't sub, stack too short, followed by a new line, and exit with the status EXIT_FAILURE
-The result is stored in the second top element of the stack, and the top element is removed, so that at the end:
+If the stack contains less than two elements, 
+print the error message L<line_number>: can't sub, stack too short, followed by a new line, 
+and exit with the status EXIT_FAILURE
+The result is stored in the second top element of the stack, and the top element is removed, 
+so that at the end:
 The top element of the stack contains the result
 The stack is one element shorter
 julien@ubuntu:~/monty$ cat bytecodes/19.m 
@@ -317,9 +337,29 @@ julien@ubuntu:~/monty$
 Repo:
 
 GitHub repository: monty
-  
+  //////////////////////////////////////////////////////////////////////////////////////////////////
 7. div
 #advanced
+Implémentez l'opcode div.
+
+L'opcode div
+
+L'opcode div divise le deuxième élément supérieur de la pile par l'élément supérieur de la pile.
+
+Utilisation : div
+Si la pile contient moins de deux éléments,
+affiche le message d'erreur L<line_number> : impossible de diviser, pile trop courte,
+suivi d'une nouvelle ligne, et sortir avec le statut EXIT_FAILURE
+Le résultat est stocké dans le deuxième élément supérieur de la pile, et l'élément supérieur est supprimé,
+pour qu'à la fin :
+L'élément supérieur de la pile contient le résultat
+La pile est un élément plus court
+Si l'élément supérieur de la pile est 0,
+imprimer le message d'erreur L<line_number> : division par zéro,
+suivi d'une nouvelle ligne, et sortir avec le statut EXIT_FAILURE
+Dépôt :
+
+
 Implement the div opcode.
 
 The div opcode
@@ -327,17 +367,38 @@ The div opcode
 The opcode div divides the second top element of the stack by the top element of the stack.
 
 Usage: div
-If the stack contains less than two elements, print the error message L<line_number>: can't div, stack too short, followed by a new line, and exit with the status EXIT_FAILURE
-The result is stored in the second top element of the stack, and the top element is removed, so that at the end:
+If the stack contains less than two elements, 
+print the error message L<line_number>: can't div, stack too short, 
+followed by a new line, and exit with the status EXIT_FAILURE
+The result is stored in the second top element of the stack, and the top element is removed, 
+so that at the end:
 The top element of the stack contains the result
 The stack is one element shorter
-If the top element of the stack is 0, print the error message L<line_number>: division by zero, followed by a new line, and exit with the status EXIT_FAILURE
+If the top element of the stack is 0, 
+print the error message L<line_number>: division by zero, 
+followed by a new line, and exit with the status EXIT_FAILURE
 Repo:
 
 GitHub repository: monty
-  
+  /////////////////////////////////////////////////////////////////////////////////////////////////
 8. mul
 #advanced
+Implémentez l'opcode mul.
+
+L'opcode mul
+
+L'opcode mul multiplie le deuxième élément supérieur de la pile avec l'élément supérieur de la pile.
+
+Utilisation : multiple
+Si la pile contient moins de deux éléments,
+affiche le message d'erreur L<line_number> : can't mul, stack too short, suivi d'une nouvelle ligne,
+et sortir avec le statut EXIT_FAILURE
+Le résultat est stocké dans le deuxième élément supérieur de la pile, et l'élément supérieur est supprimé,
+pour qu'à la fin :
+L'élément supérieur de la pile contient le résultat
+La pile est un élément plus court
+
+
 Implement the mul opcode.
 
 The mul opcode
@@ -345,42 +406,90 @@ The mul opcode
 The opcode mul multiplies the second top element of the stack with the top element of the stack.
 
 Usage: mul
-If the stack contains less than two elements, print the error message L<line_number>: can't mul, stack too short, followed by a new line, and exit with the status EXIT_FAILURE
-The result is stored in the second top element of the stack, and the top element is removed, so that at the end:
+If the stack contains less than two elements, 
+print the error message L<line_number>: can't mul, stack too short, followed by a new line, 
+and exit with the status EXIT_FAILURE
+The result is stored in the second top element of the stack, and the top element is removed, 
+so that at the end:
 The top element of the stack contains the result
 The stack is one element shorter
 Repo:
 
 GitHub repository: monty
-  
+  //////////////////////////////////////////////////////////////////////////////////////////////////
 9. mod
 #advanced
+Implémentez l'opcode mod.
+
+L'opcode mod
+
+Le mod opcode calcule le reste de la division du deuxième élément supérieur de
+la pile par l'élément supérieur de la pile.
+
+Utilisation : mod
+Si la pile contient moins de deux éléments,
+affiche le message d'erreur L<line_number> : can't mod, stack too short, suivi d'une nouvelle ligne,
+et sortir avec le statut EXIT_FAILURE
+Le résultat est stocké dans le deuxième élément supérieur de la pile, et l'élément supérieur est supprimé,
+pour qu'à la fin :
+L'élément supérieur de la pile contient le résultat
+La pile est un élément plus court
+Si l'élément du haut de la pile est 0, affiche le message d'erreur L<numéro_ligne> : division par zéro,
+suivi d'une nouvelle ligne, et sortir avec le statut EXIT_FAILURE
+
+
 Implement the mod opcode.
 
 The mod opcode
 
-The opcode mod computes the rest of the division of the second top element of the stack by the top element of the stack.
+The opcode mod computes the rest of the division of the second top element of 
+the stack by the top element of the stack.
 
 Usage: mod
-If the stack contains less than two elements, print the error message L<line_number>: can't mod, stack too short, followed by a new line, and exit with the status EXIT_FAILURE
-The result is stored in the second top element of the stack, and the top element is removed, so that at the end:
+If the stack contains less than two elements, 
+print the error message L<line_number>: can't mod, stack too short, followed by a new line, 
+and exit with the status EXIT_FAILURE
+The result is stored in the second top element of the stack, and the top element is removed, 
+so that at the end:
 The top element of the stack contains the result
 The stack is one element shorter
-If the top element of the stack is 0, print the error message L<line_number>: division by zero, followed by a new line, and exit with the status EXIT_FAILURE
+If the top element of the stack is 0, print the error message L<line_number>: division by zero, 
+followed by a new line, and exit with the status EXIT_FAILURE
 Repo:
 
 GitHub repository: monty
-  
+  ///////////////////////////////////////////////////////////////////////////////////////////////////
 10. comments
 #advanced
-Every good language comes with the capability of commenting. When the first non-space character of a line is #, treat this line as a comment (don’t do anything).
+Chaque bonne langue vient avec la capacité de commenter.
+Lorsque le premier caractère non-espace d'une ligne est #, 
+traitez cette ligne comme un commentaire (ne faites rien).
+
+
+Every good language comes with the capability of commenting. 
+When the first non-space character of a line is #, treat this line as a comment (don’t do anything).
 
 Repo:
 
 GitHub repository: monty
-  
+  /////////////////////////////////////////////////////////////////////////////////////////////////
 11. pchar
 #advanced
+Implémentez l'opcode pchar.
+
+L'opcode pchar
+
+L'opcode pchar affiche le caractère en haut de la pile, suivi d'une nouvelle ligne.
+
+Utilisation : pchar
+L'entier stocké en haut de la pile est traité comme la valeur ascii du caractère à imprimer
+Si la valeur n'est pas dans la table ascii (man ascii)
+affiche le message d'erreur L<line_number> : can't pchar, value out of range, suivi d'une nouvelle ligne,
+et sortir avec le statut EXIT_FAILURE
+Si la pile est vide, imprimez le message d'erreur L<line_number> : can't pchar, stack empty,
+suivi d'une nouvelle ligne, et sortir avec le statut EXIT_FAILURE
+
+
 Implement the pchar opcode.
 
 The pchar opcode
@@ -389,8 +498,11 @@ The opcode pchar prints the char at the top of the stack, followed by a new line
 
 Usage: pchar
 The integer stored at the top of the stack is treated as the ascii value of the character to be printed
-If the value is not in the ascii table (man ascii) print the error message L<line_number>: can't pchar, value out of range, followed by a new line, and exit with the status EXIT_FAILURE
-If the stack is empty, print the error message L<line_number>: can't pchar, stack empty, followed by a new line, and exit with the status EXIT_FAILURE
+If the value is not in the ascii table (man ascii) 
+print the error message L<line_number>: can't pchar, value out of range, followed by a new line, 
+and exit with the status EXIT_FAILURE
+If the stack is empty, print the error message L<line_number>: can't pchar, stack empty, 
+followed by a new line, and exit with the status EXIT_FAILURE
 julien@ubuntu:~/monty$ cat bytecodes/28.m 
 push 72
 pchar
@@ -400,9 +512,26 @@ julien@ubuntu:~/monty$
 Repo:
 
 GitHub repository: monty
-  
+  //////////////////////////////////////////////////////////////////////////////////////////////////
 12. pstr
 #advanced
+Implémentez l'opcode pstr.
+
+L'opcode pstr
+
+L'opcode pstr imprime la chaîne en commençant par le haut de la pile, suivie d'une nouvelle ligne.
+
+Utilisation : pstr
+L'entier stocké dans chaque élément de la pile est traité comme la valeur ascii du caractère
+à imprimer
+La chaîne s'arrête lorsque :
+la pile est terminée
+la valeur de l'élément est 0
+la valeur de l'élément n'est pas dans la table ascii
+Si la pile est vide, n'imprime qu'une nouvelle ligne
+
+
+
 Implement the pstr opcode.
 
 The pstr opcode
@@ -410,7 +539,8 @@ The pstr opcode
 The opcode pstr prints the string starting at the top of the stack, followed by a new line.
 
 Usage: pstr
-The integer stored in each element of the stack is treated as the ascii value of the character to be printed
+The integer stored in each element of the stack is treated as the ascii value of the character 
+to be printed
 The string stops when either:
 the stack is over
 the value of the element is 0
@@ -437,9 +567,21 @@ julien@ubuntu:~/monty$
 Repo:
 
 GitHub repository: monty
-  
+  ////////////////////////////////////////////////////////////////////////////////////////////////
 13. rotl
 #advanced
+Implémentez l'opcode rotl.
+
+L'opcode rotl
+
+L'opcode rotl fait pivoter la pile vers le haut.
+
+Utilisation : rotl
+L'élément supérieur de la pile devient le dernier et le deuxième élément supérieur de la pile devient
+le premier
+rotl n'échoue jamais
+
+
 Implement the rotl opcode.
 
 The rotl opcode
@@ -447,7 +589,8 @@ The rotl opcode
 The opcode rotl rotates the stack to the top.
 
 Usage: rotl
-The top element of the stack becomes the last one, and the second top element of the stack becomes the first one
+The top element of the stack becomes the last one, and the second top element of the stack becomes 
+the first one
 rotl never fails
 julien@ubuntu:~/monty$ cat bytecodes/35.m 
 push 1
@@ -474,6 +617,7 @@ julien@ubuntu:~/monty$ ./monty bytecodes/35.m
 3
 2
 1
+
 9
 8
 7
@@ -488,9 +632,21 @@ julien@ubuntu:~/monty$
 Repo:
 
 GitHub repository: monty
-  
+  /////////////////////////////////////////////////////////////////////////////////////////////////
 14. rotr
 #advanced
+Implémentez l'opcode rotr.
+
+L'opcode rotr
+
+L'opcode rotr fait pivoter la pile vers le bas.
+
+Utilisation : Rotr
+Le dernier élément de la pile devient l'élément supérieur de la pile
+rotr n'échoue jamais
+Dépôt :
+
+
 Implement the rotr opcode.
 
 The rotr opcode
@@ -503,14 +659,34 @@ rotr never fails
 Repo:
 
 GitHub repository: monty
-  
+  ////////////////////////////////////////////////////////////////////////////////////////////////
 15. stack, queue
 #advanced
+Implémentez les opcodes de pile et de file d'attente.
+
+L'opcode de la pile
+
+La pile d'opcodes définit le format des données sur une pile (LIFO). C'est le comportement par défaut de
+le programme.
+
+Utilisation : pile
+L'opcode file d'attente
+
+La file d'attente d'opcode définit le format des données dans une file d'attente (FIFO).
+
+Utilisation : file d'attente
+Lors du changement de mode :
+
+Le haut de la pile devient le devant de la file d'attente
+Le devant de la file d'attente devient le haut de la pile
+
+
 Implement the stack and queue opcodes.
 
 The stack opcode
 
-The opcode stack sets the format of the data to a stack (LIFO). This is the default behavior of the program.
+The opcode stack sets the format of the data to a stack (LIFO). This is the default behavior of 
+the program.
 
 Usage: stack
 The queue opcode
@@ -563,7 +739,7 @@ julien@ubuntu:~/monty$
 Repo:
 
 GitHub repository: monty
-  
+  ////////////////////////////////////////////////////////////////////////////////////////////////
 16. Brainf*ck
 #advanced
 Write a Brainf*ck script that prints School, followed by a new line.
@@ -579,7 +755,7 @@ Repo:
 GitHub repository: monty
 Directory: bf
 File: 1000-school.bf
-  
+  ///////////////////////////////////////////////////////////////////////////////////////////////
 17. Add two digits
 #advanced
 Add two digits given by the user.
@@ -594,7 +770,7 @@ Repo:
 GitHub repository: monty
 Directory: bf
 File: 1001-add.bf
-  
+  ////////////////////////////////////////////////////////////////////////////////////////////
 18. Multiplication
 #advanced
 Multiply two digits given by the user.
@@ -609,7 +785,7 @@ Repo:
 GitHub repository: monty
 Directory: bf
 File: 1002-mul.bf
-  
+  ////////////////////////////////////////////////////////////////////////////////////////////////
 19. Multiplication level up
 #advanced
 Multiply two digits given by the user.
