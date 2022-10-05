@@ -1,5 +1,4 @@
 #include "monty.h"
-#include <ctype.h>
 
 void execute(char *str, stack_t **stack, unsigned int line_number)
 {
@@ -13,7 +12,7 @@ void execute(char *str, stack_t **stack, unsigned int line_number)
 
     for (i = 0; op[i].opcode != NULL; i++)
     {
-        if (op[i].opcode == str)
+        if (strcmp(op[i].opcode,str) == 0)
         {
             op[i].f(stack, line_number);
             return;

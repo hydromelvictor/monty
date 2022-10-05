@@ -1,6 +1,12 @@
 #include "monty.h"
 
-
+/**
+ * main - monty programme main
+ * 
+ * @argc: main parameter count 
+ * @argv: main parameter
+ * Return: int
+ */
 int main(int argc, char *argv[])
 {
     size_t n = 0;
