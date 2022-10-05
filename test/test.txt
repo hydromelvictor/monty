@@ -269,6 +269,15 @@ GitHub repository: monty
   ///////////////////////////////////////////////////////////////////////////////////////////////
 5. nop
 mandatory
+Implémentez l'opcode nop.
+
+L'opcode nop
+
+L'opcode nop ne fait rien.
+
+
+Utilisation : non
+
 Implement the nop opcode.
 
 The nop opcode
@@ -279,7 +288,7 @@ Usage: nop
 Repo:
 
 GitHub repository: monty
-  
+  ///////////////////////////////////////////////////////////////////////////////////////////////
 6. sub
 #advanced
 Implement the sub opcode.
