@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <string.h>
 
 /**
  * main - monty programme main
@@ -12,7 +13,7 @@ int main(int argc, char *argv[])
     size_t n = 0;
     unsigned int i = 1;
     FILE *fd = NULL;
-    char *str = NULL, *arg;
+    char *str, *arg[] = {NULL, NULL}, *lineptr = NULL;
     stack_t *stack = NULL;
 
     if (argc != 2)
@@ -28,11 +29,12 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
-    while (getline(&str, &n, fd) != -1)
+    for (i = 0; getline(&lineptr, &n, fd) != -1; i++)
     {
-        arg = strtok(str, " \n\t\r$");
-        execute(arg, &stack, i);
-        i++;
+        str = strtok(str, "\n\t\r");
+        arg[0] = strtok(str, "\n\t\r");
+        arg[1] = strtok(NULL, "\n\t\r");
+        execute(arg[0], &stack, atoi(arg[1]));
     }
     fclose(fd);
     return (0);
