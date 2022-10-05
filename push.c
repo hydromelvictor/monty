@@ -17,7 +17,7 @@ void push(stack_t **stack, unsigned int line_number)
         dprintf(STDERR_FILENO, "Error: malloc failed\n");
         exit(EXIT_FAILURE);
     }
-    run.arg = strtok(NULL, " ");
+    run.arg = strtok(NULL, " \n\t\r");
     if (run.arg == NULL || _isdigit(run.arg) == -1)
     {
         dprintf(STDERR_FILENO, "L%u: usage: push integer", line_number);
