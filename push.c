@@ -10,7 +10,7 @@
  */
 void push(stack_t **stack, unsigned int line_number)
 {
-    stack_t *new = malloc(sizeof(stack_t));
+    stack_t *new = malloc(sizeof(stack_t)), *current;
 
     if (new == NULL)
     {
@@ -34,6 +34,9 @@ void push(stack_t **stack, unsigned int line_number)
         *stack = new;
         return;
     }
-    new->next = *stack;
+
+    current = *stack;
+    new->next = current;
+    current->prev = new;
     *stack = new;
 }
