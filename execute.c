@@ -33,7 +33,7 @@ void execute(stack_t **stack __attribute__((unused)), unsigned int line_number)
         if (strcmp(op[i].opcode, run.func) == 0)
         {
             op[i].f(stack, line_number);
-            exit(EXIT_SUCCESS);
+            return;
         }
     }
     dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", line_number, run.func);
