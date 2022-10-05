@@ -24,17 +24,15 @@ int main(int argc, char *argv[])
         fprintf(stderr, "USAGE: monty file\n");
         exit(EXIT_FAILURE);
     }
-
     fd = fopen(argv[1], "r");
     if (fd == NULL)
     {
         fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
         exit(EXIT_FAILURE);
     }
-
     for (i = 1; getline(&lineptr, &n, fd) != -1; i++)
     {
-        run.line = strtok(lineptr, "\n\t\r$");
+        run.line = strtok(lineptr, "\n\t\r");
         execute(&stack, i);
     }
     fclose(fd);

@@ -54,5 +54,6 @@ extern param_t run;
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack , unsigned int line_number __attribute__((unused)));
 void execute(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number __attribute__((unused)));
 int _isdigit(char *str);
 #endif

@@ -88,9 +88,20 @@ julien@ubuntu:~/monty$
 Repo:
 
 GitHub repository: monty
-  
+  ///////////////////////////////////////////////////////////////////////////////////////////////
 1. pint
 mandatory
+Implémentez l'opcode pint.
+
+L'opcode pinte
+
+L'opcode pint imprime la valeur en haut de la pile, suivie d'une nouvelle ligne.
+
+Utilisation : pinte
+Si la pile est vide, imprimez le message d'erreur L<line_number> : can't pint, stack empty,
+suivi d'une nouvelle ligne, et sortir avec le statut EXIT_FAILURE
+
+
 Implement the pint opcode.
 
 The pint opcode
@@ -98,7 +109,8 @@ The pint opcode
 The opcode pint prints the value at the top of the stack, followed by a new line.
 
 Usage: pint
-If the stack is empty, print the error message L<line_number>: can't pint, stack empty, followed by a new line, and exit with the status EXIT_FAILURE
+If the stack is empty, print the error message L<line_number>: can't pint, stack empty, 
+followed by a new line, and exit with the status EXIT_FAILURE
 julien@ubuntu:~/monty$ cat bytecodes/06.m 
 push 1
 pint
@@ -114,7 +126,7 @@ julien@ubuntu:~/monty$
 Repo:
 
 GitHub repository: monty
-  
+  ////////////////////////////////////////////////////////////////////////////////////////////////
 2. pop
 mandatory
 Implement the pop opcode.
