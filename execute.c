@@ -1,7 +1,9 @@
 #include "monty.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 
-void execute(stack_t **stack, unsigned int line_number)
+void execute(stack_t **stack __attribute__((unused)), unsigned int line_number)
 {
     instruction_t op[] = {
         {"push", push},
@@ -11,7 +13,11 @@ void execute(stack_t **stack, unsigned int line_number)
     };
     int i;
 
-    run.func = strtok(run.line, " ");
+    run.func = strtok(run.line, " \n\t\r");
+    if (run.func == NULL)
+    {
+        return;
+    }
     for (i = 0; op[i].opcode != NULL; i++)
     {
         if (strcmp(op[i].opcode, run.func) == 0)

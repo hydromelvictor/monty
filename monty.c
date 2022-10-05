@@ -34,7 +34,10 @@ int main(int argc, char *argv[])
     for (i = 1; getline(&lineptr, &n, fd) != -1; i++)
     {
         run.line = strtok(lineptr, "\n\t\r");
-        execute(&stack, i);
+        if (run.line == NULL)
+            continue;
+        else
+            execute(&stack, i);
     }
     fclose(fd);
     return (0);
