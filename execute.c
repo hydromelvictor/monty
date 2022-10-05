@@ -26,15 +26,14 @@ void execute(stack_t **stack __attribute__((unused)), unsigned int line_number)
 
     run.func = strtok(run.line, " \n\t\r");
     if (run.func == NULL)
-    {
         return;
-    }
+
     for (i = 0; op[i].opcode != NULL; i++)
     {
         if (strcmp(op[i].opcode, run.func) == 0)
         {
             op[i].f(stack, line_number);
-            return;
+            exit(EXIT_SUCCESS);
         }
     }
     dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", line_number, run.func);

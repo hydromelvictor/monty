@@ -1,5 +1,6 @@
 #include "monty.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 
@@ -40,5 +41,5 @@ int main(int argc, char *argv[])
             execute(&stack, i);
     }
     fclose(fd);
-    return (0);
+    exit(EXIT_SUCCESS);
 }
