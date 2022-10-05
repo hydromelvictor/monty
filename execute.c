@@ -9,6 +9,7 @@ void execute(stack_t **stack __attribute__((unused)), unsigned int line_number)
         {"push", push},
         {"pall", pall},
         {"pint", pint},
+        {"pop", pop},
         {NULL, NULL}
     };
     int i;

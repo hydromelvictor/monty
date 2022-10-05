@@ -136,7 +136,7 @@ L'opcode pop
 L'opcode pop supprime l'élément supérieur de la pile.
 
 Utilisation : pop
-Si la pile est vide, imprimez le message d'erreur L<line_number>: can't pop an empty stack,
+Si la pile est vide, imprimez le message d'erreur,
 suivi d'une nouvelle ligne, et sortir avec le statut EXIT_FAILURE
 
 

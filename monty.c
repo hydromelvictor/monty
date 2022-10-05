@@ -31,7 +31,6 @@ int main(int argc, char *argv[])
         dprintf(STDERR_FILENO, "Error: Can't open file %s\n", argv[1]);
         exit(EXIT_FAILURE);
     }
-    fclose(fd);
     for (i = 1; getline(&lineptr, &n, fd) != -1; i++)
     {
         run.line = strtok(lineptr, "\n\t\r");
@@ -40,5 +39,6 @@ int main(int argc, char *argv[])
         else
             execute(&stack, i);
     }
+    fclose(fd);
     return (0);
 }
