@@ -171,7 +171,7 @@ julien@ubuntu:~/monty$
 Repo:
 
 GitHub repository: monty
-  
+  //////////////////////////////////////////////////////////////////////////////////////////////////
 3. swap
 mandatory
 Implémentez l'opcode swap.
@@ -214,9 +214,26 @@ julien@ubuntu:~/monty$
 Repo:
 
 GitHub repository: monty
-  
+  /////////////////////////////////////////////////////////////////////////////////////////////////
 4. add
 mandatory
+Implémentez l'opcode d'ajout.
+
+L'opcode d'ajout
+
+L'opcode add ajoute les deux premiers éléments de la pile.
+
+Utilisation : ajouter
+Si la pile contient moins de deux éléments,
+affiche le message d'erreur L<line_number> : impossible d'ajouter, pile trop courte,
+suivi d'une nouvelle ligne, et sortir avec le statut EXIT_FAILURE
+Le résultat est stocké dans le deuxième élément supérieur de la pile, 
+et l'élément supérieur est supprimé,
+pour qu'à la fin :
+L'élément supérieur de la pile contient le résultat
+La pile est un élément plus court
+
+
 Implement the add opcode.
 
 The add opcode
@@ -224,8 +241,11 @@ The add opcode
 The opcode add adds the top two elements of the stack.
 
 Usage: add
-If the stack contains less than two elements, print the error message L<line_number>: can't add, stack too short, followed by a new line, and exit with the status EXIT_FAILURE
-The result is stored in the second top element of the stack, and the top element is removed, so that at the end:
+If the stack contains less than two elements, 
+print the error message L<line_number>: can't add, stack too short, 
+followed by a new line, and exit with the status EXIT_FAILURE
+The result is stored in the second top element of the stack, and the top element is removed, 
+so that at the end:
 The top element of the stack contains the result
 The stack is one element shorter
 julien@ubuntu:~/monty$ cat bytecodes/12.m 
@@ -246,7 +266,7 @@ julien@ubuntu:~/monty$
 Repo:
 
 GitHub repository: monty
-  
+  ///////////////////////////////////////////////////////////////////////////////////////////////
 5. nop
 mandatory
 Implement the nop opcode.
