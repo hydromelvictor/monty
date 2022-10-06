@@ -1,6 +1,18 @@
 #include "monty.h"
 
 /**
+ * _isdigit - verifie
+ * @str: string
+ * Return: int
+ */
+int _isdigit(char *str)
+{
+    if ((str[0] == '-' && isdigit(str[1]) > 0) || isdigit(str[0]) > 0)
+        return (1);
+    return (-1);
+}
+
+/**
  * push - data saving
  *
  * @stack: data structure
@@ -16,7 +28,7 @@ dprintf(STDERR_FILENO, "Error: malloc failed\n");
 exit(EXIT_FAILURE);
 }
 arg = strtok(NULL, " \n\t\r");
-if (arg == NULL || isdigit(arg[0]) <= 0)
+if (arg == NULL || _isdigit(arg) == -1)
 {
 dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_number);
 exit(EXIT_FAILURE);
