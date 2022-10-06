@@ -8,16 +8,17 @@ void pstr(stack_t **stack, unsigned int line_number __attribute__((unused)))
     if (*stack == NULL)
     {
         printf("\n");
-        exit(EXIT_SUCCESS);
+        return;
     }
         
     current = *stack;
     while (current != NULL)
     {
         if (current->n == 0 || current->n < 0 || current->n > 127)
-            exit(EXIT_SUCCESS);
+            return;
         
         putchar(current->n);
         current = current->next;
     }
+    putchar('\n');
 }
