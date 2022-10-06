@@ -18,11 +18,12 @@ instruction_t op[] = {
 {NULL, NULL}
 };
 int i;
+/*
 arg = strtok(arg, " \n\t\r");
 if (arg == NULL)
 {
 return;
-}
+}*/
 for (i = 0; op[i].opcode != NULL; i++)
 {
 if (strcmp(op[i].opcode, arg) == 0)
