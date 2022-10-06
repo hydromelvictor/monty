@@ -1,14 +1,11 @@
 #include "monty.h"
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
 
-param_t run = {NULL, NULL, NULL};
+param_t run;
 
 /**
  * main - monty programme main
- * 
- * @argc: main parameter count 
+ *
+ * @argc: main parameter count
  * @argv: main parameter
  * Return: int
  */
@@ -19,6 +16,10 @@ unsigned int i;
 FILE *fd = NULL;
 char *lineptr = NULL;
 stack_t *stack = NULL;
+run.arg = NULL;
+run.func = NULL;
+run.line = NULL;
+
 
 if (argc != 2)
 {
@@ -34,14 +35,10 @@ exit(EXIT_FAILURE);
 for (i = 1; getline(&lineptr, &n, fd) != -1; i++)
 {
 run.line = strtok(lineptr, "\n\t\r");
-if (run.line == NULL || run.line[0] == '#')
-{
-continue;
-}
-else
+if (run.line != NULL && run.line[0] != '#')
 {
 execute(&stack, i);
-}       
+}
 }
 fclose(fd);
 return (0);
