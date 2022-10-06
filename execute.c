@@ -1,10 +1,11 @@
 #include "monty.h"
 
 /**
- * execute - execution function
+ * execute - execution
  *
  * @stack: stack begin
  * @line_number: line
+ * @arg: charater
  */
 void execute(char *arg, stack_t **stack, unsigned int line_number)
 {
