@@ -19,7 +19,7 @@ instruction_t op[] = {
 };
 int i;
 arg = strtok(arg, " \n\t\r");
-if (arg == NULL)
+if (arg == NULL && arg[0] == '#')
 {
 return;
 }
