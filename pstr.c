@@ -3,14 +3,7 @@
 
 void pstr(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
-    stack_t *current;
-
-    if (*stack == NULL)
-    {
-        printf("\n");
-        return;
-    }
-        
+    stack_t *current;  
     current = *stack;
     while (current != NULL)
     {
