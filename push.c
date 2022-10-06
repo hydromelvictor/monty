@@ -7,15 +7,19 @@
  */
 int _isdigit(char *str)
 {
-    int i;
-    for (i = 0; str[i] != '\0'; i++)
-    {
-        if (str[i] == '-' && i == 0)
-            continue;
-        if (isdigit(str[i] == 0))
-            return (-1);
-    }
-    return (1);
+int i;
+for (i = 0; str[i] != '\0'; i++)
+{
+if (str[i] == '-' && i == 0)
+{
+continue;
+}
+if (isdigit(str[i] == 0))
+{
+return (-1);
+}
+}
+return (1);
 }
 
 /**
