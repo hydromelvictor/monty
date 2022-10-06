@@ -42,24 +42,8 @@ char *opcode;
 void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-/**
- * struct parm - parameter for monty
- * @line: line in the file
- * @func: function in the line
- * @arg: argument in de line for functon
- */
-typedef struct parm
-{
-char *line;
-char *func;
-char *arg;
-} param_t;
-/*
-extern param_t run;
-*/
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
-void execute(char *str, stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
@@ -74,4 +58,5 @@ void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 
+void execute(char *str, stack_t **stack, unsigned int line_number);
 #endif

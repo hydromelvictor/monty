@@ -17,9 +17,6 @@ instruction_t op[] = {
 {NULL, NULL}
 };
 int i;
-/*
-run.func
-*/
 arg = strtok(arg, " \n\t\r");
 if (arg == NULL)
 {

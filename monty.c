@@ -1,7 +1,5 @@
 #include "monty.h"
-/*
-param_t run = {NULL, NULL, NULL};
-*/
+
 /**
  * main - monty programme main
  *
@@ -30,9 +28,6 @@ exit(EXIT_FAILURE);
 }
 for (i = 1; getline(&lineptr, &n, fd) != -1; i++)
 {
-    /*
-run.line
-*/
 arg = strtok(lineptr, "\n\t\r");
 if (arg != NULL && arg[0] != '#')
 {
