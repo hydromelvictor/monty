@@ -15,7 +15,7 @@ dprintf(STDERR_FILENO, "Error: malloc failed\n");
 exit(EXIT_FAILURE);
 }
 run.arg = strtok(NULL, " \n\t\r");
-if (run.arg == NULL || _isdigit(run.arg) == -1)
+if (run.arg == NULL || isdigit(run.arg[0]) <= 0)
 {
 dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_number);
 exit(EXIT_FAILURE);

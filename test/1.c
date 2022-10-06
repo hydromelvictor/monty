@@ -2,6 +2,7 @@
 #include <stdlib.h>
 int main()
 {
-    printf("%d", atoi("4l547"));
+    printf("%d\n", atoi("1.7"));
+    putchar(48);
     return 0;
 }
