@@ -8,7 +8,7 @@ void pop(stack_t **stack, unsigned int line_number)
     if (*stack == NULL)
     {
         dprintf(STDERR_FILENO, "L%u: can't pop an empty stack\n", line_number);
-    exit(EXIT_FAILURE);
+        exit(EXIT_FAILURE);
     }
 
     del = *stack;
