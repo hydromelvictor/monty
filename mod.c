@@ -6,13 +6,13 @@ void mod(stack_t **stack, unsigned int line_number)
     current = *stack;
     if (*stack == NULL || current->next == NULL)
     {
-        dprintf(STDERR_FILENO, "L%u: can't mod, stack too short\n", line_number);
+        fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
         exit(EXIT_FAILURE);
     }
 
     if (current->n == 0)
     {
-        dprintf(STDERR_FILENO, "L%u: division by zero\n", line_number);
+        fprintf(stderr, "L%u: division by zero\n", line_number);
         exit(EXIT_FAILURE);
     }
     sum = current->next;

@@ -26,6 +26,6 @@ op[i].f(stack, line_number);
 return;
 }
 }
-dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", line_number, arg);
+fprintf(stderr, "L%u: unknown instruction %s\n", line_number, arg);
 exit(EXIT_FAILURE);
 }

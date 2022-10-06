@@ -5,7 +5,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
+#include <stddef.h>
 #include <string.h>
 #include <ctype.h>
 
@@ -56,4 +56,6 @@ void rotr(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 
 void execute(char *str, stack_t **stack, unsigned int line_number);
+int _isdigit(char *str);
+
 #endif
