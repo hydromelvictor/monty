@@ -14,10 +14,10 @@ void pstr(stack_t **stack, unsigned int line_number __attribute__((unused)))
     current = *stack;
     while (current != NULL)
     {
-        if (current->n == 0 || current->n < 0 || current->n > 127)
+        if (current->n > 0 && current->n <= 127)
+            putchar(current->n);
+        else
             return;
-        
-        putchar(current->n);
         current = current->next;
     }
     putchar('\n');
