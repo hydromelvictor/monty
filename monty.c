@@ -1,6 +1,6 @@
 #include "monty.h"
 
-param_t run;
+param_t run = {NULL, NULL, NULL};
 
 /**
  * main - monty programme main
@@ -16,10 +16,6 @@ unsigned int i;
 FILE *fd = NULL;
 char *lineptr = NULL;
 stack_t *stack = NULL;
-run.arg = NULL;
-run.func = NULL;
-run.line = NULL;
-
 
 if (argc != 2)
 {

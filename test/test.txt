@@ -666,10 +666,11 @@ Implémentez les opcodes de pile et de file d'attente.
 
 L'opcode de la pile
 
-La pile d'opcodes définit le format des données sur une pile (LIFO). C'est le comportement par défaut de
-le programme.
+La pile d'opcodes définit le format des données sur une pile (LIFO). 
+C'est le comportement par défaut du programme.
 
 Utilisation : pile
+
 L'opcode file d'attente
 
 La file d'attente d'opcode définit le format des données dans une file d'attente (FIFO).
