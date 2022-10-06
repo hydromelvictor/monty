@@ -16,7 +16,8 @@ instruction_t op[] = {
 {"pop", pop}, {"swap", swap}, {"add", add},
 {"nop", nop}, {"sub", _sub}, {"div", _div},
 {"mod", mod}, {"pchar", pchar}, {"pstr", pstr},
-{"rotl", rotl}, {"rotr", rotr}, {NULL, NULL}
+{"rotl", rotl}, {"rotr", rotr}, {"mul", mul},
+{NULL, NULL}
 };
 int i;
 run.func = strtok(run.line, " \n\t\r");
