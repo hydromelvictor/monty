@@ -54,12 +54,12 @@ char *line;
 char *func;
 char *arg;
 } param_t;
-
+/*
 extern param_t run;
-
+*/
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
-void execute(stack_t **stack, unsigned int line_number);
+void execute(char *str, stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);

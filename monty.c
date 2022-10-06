@@ -1,7 +1,7 @@
 #include "monty.h"
-
+/*
 param_t run = {NULL, NULL, NULL};
-
+*/
 /**
  * main - monty programme main
  *
@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 size_t n = 0;
 unsigned int i;
 FILE *fd = NULL;
-char *lineptr = NULL;
+char *lineptr = NULL, *arg = NULL;
 stack_t *stack = NULL;
 
 if (argc != 2)
@@ -30,10 +30,13 @@ exit(EXIT_FAILURE);
 }
 for (i = 1; getline(&lineptr, &n, fd) != -1; i++)
 {
-run.line = strtok(lineptr, "\n\t\r");
-if (run.line != NULL && run.line[0] != '#')
+    /*
+run.line
+*/
+arg = strtok(lineptr, "\n\t\r");
+if (arg != NULL && arg[0] != '#')
 {
-execute(&stack, i);
+execute(arg, &stack, i);
 }
 }
 fclose(fd);

@@ -6,7 +6,7 @@
  * @stack: stack begin
  * @line_number: line
  */
-void execute(stack_t **stack, unsigned int line_number)
+void execute(char *arg, stack_t **stack, unsigned int line_number)
 {
 instruction_t op[] = {
 {"push", push}, {"pall", pall}, {"pint", pint},
@@ -17,19 +17,22 @@ instruction_t op[] = {
 {NULL, NULL}
 };
 int i;
-run.func = strtok(run.line, " \n\t\r");
-if (run.func == NULL)
+/*
+run.func
+*/
+arg = strtok(arg, " \n\t\r");
+if (arg == NULL)
 {
 return;
 }
 for (i = 0; op[i].opcode != NULL; i++)
 {
-if (strcmp(op[i].opcode, run.func) == 0)
+if (strcmp(op[i].opcode, arg) == 0)
 {
 op[i].f(stack, line_number);
 return;
 }
 }
-dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", line_number, run.func);
+dprintf(STDERR_FILENO, "L%u: unknown instruction %s\n", line_number, arg);
 exit(EXIT_FAILURE);
 }
