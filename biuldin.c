@@ -3,7 +3,6 @@
 
 int _isdigit(char *str)
 {
-size_t i;
 if (isdigit(str[0]) <= 0)
 {
 return (-1);
