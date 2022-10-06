@@ -34,7 +34,11 @@ exit(EXIT_FAILURE);
 for (i = 1; getline(&lineptr, &n, fd) != -1; i++)
 {
 run.line = strtok(lineptr, "\n\t\r");
-if (run.line != NULL || run.line[0] != '#')
+if (run.line == NULL || run.line[0] == '#')
+{
+continue;
+}
+else
 {
 execute(&stack, i);
 }       
