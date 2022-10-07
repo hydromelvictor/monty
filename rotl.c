@@ -1,17 +1,22 @@
 #include "monty.h"
 
+/**
+ * rotl - permutation first and last place
+ * @stack: begin
+ * @line_number: line
+ */
 void rotl(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
-    stack_t *current, *del;
-
-    del = *stack;
-    current = del->next;
+stack_t *current, *del;
+del = *stack;
+current = del->next;
 
     if (*stack == NULL || del->next == NULL)
         return;
 
     *stack = current;
-    current->next->prev = NULL;
+    if (current->next != NULL)
+        current->next->prev = NULL;
     while (current->next != NULL)
     {
         current = current->next;
