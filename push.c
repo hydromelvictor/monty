@@ -41,6 +41,7 @@ arg = strtok(NULL, " \n\t\r");
 if (arg == NULL || _isdigit(arg) == -1)
 {
 fprintf(stderr, "L%u: usage: push integer\n", line_number);
+free(new);
 exit(EXIT_FAILURE);
 }
 new->n = atoi(arg);
