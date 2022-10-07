@@ -1,5 +1,10 @@
 #include "monty.h"
 
+/**
+ * pchar - permutation first and last place
+ * @stack: begin
+ * @line_number: line
+ */
 void pchar(stack_t **stack, unsigned int line_number)
 {
     stack_t *current;
@@ -17,4 +22,5 @@ void pchar(stack_t **stack, unsigned int line_number)
     }
 
     putchar(current->n);
+    putchar('\n');
 }
