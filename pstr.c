@@ -15,7 +15,6 @@ while (current != NULL)
 if (current->n > 0 && current->n <= 127)
 {
 putchar(current->n);
-putchar('\n');
 }
 else
 {
