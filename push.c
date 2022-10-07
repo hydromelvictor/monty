@@ -14,7 +14,7 @@ if (str[i] == '-' && i == 0)
 {
 continue;
 }
-if (isdigit(str[i] == 0))
+if (isdigit(str[i]) == 0)
 {
 return (-1);
 }
