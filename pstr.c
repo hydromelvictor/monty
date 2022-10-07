@@ -18,6 +18,7 @@ putchar(current->n);
 }
 else
 {
+putchar('\n');
 return;
 }
 current = current->next;
