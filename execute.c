@@ -10,7 +10,7 @@
 void execute(char *arg, stack_t **stack, unsigned int line_number)
 {
 instruction_t op[] = {
-{"push", push}, {"pall", pall}, {"pint", pint},
+{"push", pusher}, {"pall", pall}, {"pint", pint},
 {"pop", pop}, {"swap", swap}, {"add", add},
 {"nop", nop}, {"sub", _sub}, {"div", _div},
 {"mod", mod}, {"pchar", pchar}, {"pstr", pstr},

@@ -1,5 +1,6 @@
 #include "monty.h"
 
+int status = STACK;
 /**
  * main - monty programme main
  *
@@ -31,6 +32,11 @@ for (i = 1; getline(&lineptr, &n, fd) != -1; i++)
 arg = strtok(lineptr, " \n\t\r");
 if (arg != NULL && arg[0] != '#')
 {
+if (strcmp(arg, "queue") == 0 || strcmp(arg, "stack")== 0)
+{
+status = (strcmp(arg, "queue") == 0) ? QUEUE : STACK;
+continue;
+}
 execute(arg, &stack, i);
 }
 }
