@@ -34,6 +34,8 @@ if (arg != NULL && arg[0] != '#')
 execute(arg, &stack, i);
 }
 }
+free(lineptr);
 fclose(fd);
+_free(&stack);
 return (0);
 }

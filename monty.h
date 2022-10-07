@@ -56,5 +56,6 @@ void mul(stack_t **stack, unsigned int line_number);
 
 void execute(char *str, stack_t **stack, unsigned int line_number);
 int _isdigit(char *str);
+void _free(stack_t **stack);
 
 #endif
